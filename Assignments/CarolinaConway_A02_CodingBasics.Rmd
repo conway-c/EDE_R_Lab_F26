@@ -28,7 +28,7 @@ This exercise accompanies the lessons/labs in Environmental Data Explorations on
 
 Set the following R code chunk so that it runs when knit, but no messages, errors, or any output is shown. The code itself, however, should be displayed.
 
-```{r project.setup, error=FALSE, message=FALSE, include=FALSE}
+```{r project.setup, error=FALSE, message=FALSE}
 #Import libraries
 library(tidyverse)
 library(knitr)
@@ -120,6 +120,6 @@ Add a table of contents to your document and knit to a PDF. Submit your PDF to C
 
 ### Github link
 
-> Answer:
+> Answer:https://github.com/conway-c/EDE_R_Lab_F26.git
 
 **NOTE** Before knitting, you'll need to comment out the call to the function in Q13 that does not work. (A document can't knit if the code it contains causes an error!)
