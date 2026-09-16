@@ -31,6 +31,7 @@ Suppose you want just the column speed. How would you access that data?
 
 ```{r}
 cars$speed
+class(cars$speed)
 ```
 
 How would you store it on another object?
@@ -84,7 +85,7 @@ Note that when we transformed the vector in a data frame the name of the vector 
 
 ```{r}
 colnames(df)  #or simply names()
-names(df)
+names(df) <- c("speed","distance")
 ```
 
 ## Creating a data frame
@@ -105,9 +106,9 @@ Some useful functions to use with data frames.
 ncol(df)  
 nrow(df)  
 length(df)  #same as ncol
-summary(df)
+summary(df) #gives statistics for mean, median, mode
 head(df) #show the first 6 rows of df
-
+tail(df) #show the last 6 rows of df
 #If you know the number of the column you want you can refer to that to access column
 df[,1]
 

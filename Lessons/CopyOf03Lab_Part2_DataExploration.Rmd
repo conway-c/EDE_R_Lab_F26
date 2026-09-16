@@ -3,40 +3,33 @@ title: "M3 - Lab 3 - Part 2 - Exploring a New Environmental Dataset"
 subtitle: "Environmental Data Exploration"
 author: "John Fay & Luana Lima"
 output: pdf_document
-editor_options: 
-  markdown: 
-    wrap: 72
 ---
 
 ## About this lab
 
 In the lesson you explored a USGS streamflow dataset. Now run the **same
-data-detective workflow** on a completely different environmental
-dataset — **EPA daily PM2.5 (fine particulate matter) for North
-Carolina** — on your own. Same moves: **set up → understand → inspect →
-diagnose → summarize → three plots → write it up.** You are diagnosing,
-not cleaning.
+data-detective workflow** on a completely different environmental dataset —
+**EPA daily PM2.5 (fine particulate matter) for North Carolina** — on your
+own. Same moves: **set up → understand → inspect → diagnose → summarize → three
+plots → write it up.** You are diagnosing, not cleaning.
 
-------------------------------------------------------------------------
+---
 
 ## Stage 0 — Set up the session
 
--   Load `tidyverse`, `lubridate`, and `here`.
--   Import `EPAair_PM25_NC2025_raw.csv` with a project-relative path.
--   Parse the `Date` column into a real date.
+- Load `tidyverse`, `lubridate`, and `here`.
+- Import `EPAair_PM25_NC2025_raw.csv` with a project-relative path.
+- Parse the `Date` column into a real date.
 
 ```{r setup, message = FALSE}
 # Load packages
-library(tidyverse);
-library (lubridate); 
-library(here)
+
 
 # Confirm the project root with here()
-here()
+
 
 # Import the raw PM2.5 file (project-relative path via here())
-pm25 <- read.csv( 
-  here("Data/Raw/EPAair_PM25_NC2025_raw.csv")
+pm25 <- read.csv(
   #---- ENTER THE FILE PATH HERE, using here() ----
 )
 
@@ -46,36 +39,34 @@ pm25 <- read.csv(
 pm25$Date <- mdy(pm25$Date)
 ```
 
-------------------------------------------------------------------------
+---
 
 ## Stage 1 — Understand the source
 
-Briefly: where do these data come from, what does one row represent, and
-in what units is PM2.5 reported?
+Briefly: where do these data come from, what does one row represent, and in what
+units is PM2.5 reported?
 
 > Answer:
 
-------------------------------------------------------------------------
+---
 
 ## Stage 2 — Inspect the structure
 
 ```{r inspect}
 # glimpse the data; check dim() and names()
-glimpse(pm25)
-dim(pm25)
-names(pm25)
+
+
 ```
 
 What stands out about the size, the columns, and the `Date` column?
 
 > Answer:
 
-------------------------------------------------------------------------
+---
 
 ## Stage 3 — Check types & identify the categorical variables
 
-Which columns are categorical (grouping) variables rather than
-measurements?
+Which columns are categorical (grouping) variables rather than measurements?
 
 ```{r categoricals}
 # Look at the unique values of the likely categorical columns
@@ -88,7 +79,7 @@ measurements?
 
 > Answer (which columns are categorical?):
 
-------------------------------------------------------------------------
+---
 
 ## Stage 4 — Diagnose: sites, missingness, and coverage
 
@@ -109,13 +100,13 @@ measurements?
 
 > Answer:
 
-------------------------------------------------------------------------
+---
 
 ## Stage 5 — Descriptive summaries
 
--   How many observations are present?
--   What is the mean (and median) daily PM2.5 concentration?
--   In what units?
+- How many observations are present?
+- What is the mean (and median) daily PM2.5 concentration?
+- In what units?
 
 ```{r summaries}
 # number of observations
@@ -131,12 +122,12 @@ measurements?
 
 > Answer:
 
-------------------------------------------------------------------------
+---
 
 ## Stage 6 — Three diagnostic plots
 
-One categorical, one distribution, one relationship. Detective tools
-only — customization is M5.
+One categorical, one distribution, one relationship. Detective tools only —
+customization is M5.
 
 ```{r plots, fig.height = 3, fig.width = 4, warning = FALSE}
 # (1) CATEGORICAL — number of samples from each data Source (bar chart)
@@ -154,11 +145,11 @@ What does each plot tell you?
 
 > Answer:
 
-------------------------------------------------------------------------
+---
 
 ## Stage 7 — Write a short data-exploration summary
 
-> -   **One key characteristic:**
-> -   **One data-quality issue:**
-> -   **One interesting pattern:**
-> -   **One question for further analysis:**
+> - **One key characteristic:**
+> - **One data-quality issue:**
+> - **One interesting pattern:**
+> - **One question for further analysis:**

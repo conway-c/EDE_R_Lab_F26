@@ -3,7 +3,7 @@ title: "Lab 2 - Data Structures in R"
 subtitle: "Environmental Data Analytics"
 author: "John Fay & Luana Lima"
 ---
-
+#testsaving
 ## Objective
 Discuss and navigate different data types in R
  - Vectors
@@ -38,11 +38,13 @@ vector1 <- c(1,2,5.3,6,-2,4) # Vector type: Numeric
 vector1
 class(vector1)
 
-vector2 <- c("one","two","three") # Vector type: 
+vector2 <- c("one","two","three") # Vector type: Character
 vector2
+class (vector2)
 
-vector3 <- c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE) # Vector type:
+vector3 <- c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE) # Vector type:Logical
 vector3
+class (vector3)
 ```
 
 ### Vector Operations
@@ -52,12 +54,12 @@ Add comments below to indicate what each operation does.(First answer is provide
 # Returns the 3rd item in the vector
 vector1[3]
 
-#
+#max will return the max value of my vector (6)
 max(vector1)
 
 #Create another vector of the values 10 thru 15
 vector4 <- c(10:15)
-
+vector4
 #
 c(vector1, vector4)
 
@@ -67,10 +69,10 @@ vector1 * vector4
 #
 vector1 * 10
 
-#
+#Capitalizes
 toupper(vector2) 
 
-#
+#Does opposite
 !vector3
 
 ```
@@ -82,16 +84,16 @@ Find a 5-day forecast of temperatures (Fahrenheit) for Durham, North Carolina. C
 ```{r Vector Exercise}
 
 #Assign to the variable 'temps_F' a vector of high temperatures in F
-
+temps_F <- c(97, 98, 94, 83, 83)
 
 #What is the average of these temperatures 
-
+mean(temps_F)
 
 #Compute the difference between each temperature and the average calculated above
-
+temps_F - mean(temps_F)
 
 #Subtract 32 and multiply by 5/9ths to create a vector in Celsius
-
+temps_C <- (temps_F -32)*5/9
 
 ```
 
@@ -102,7 +104,7 @@ Complete the comments below:
 # Matrices ----
 matrix1 <- matrix(1:20, nrow = 5,ncol = 4) # 
 matrix1
-#matrix1 has __ rows and __ columns
+#matrix1 has 4 rows and 5 columns
 
 matrix2 <- matrix(1:20, nrow = 5, ncol = 4, byrow = TRUE) #
 matrix2
@@ -162,7 +164,7 @@ matrix4['R2','C1']
 ### Exercise 1b: Matrices
 Compute the mean of column "C2" in matrix4. (Should be 14.5)
 ```{r Matrix Exercise}
-
+mean(matrix4)
 ```
 
 
@@ -188,7 +190,7 @@ list1 <- list(
 #
 list1
 
-#
+#5.3
 list1$age
 
 #
@@ -197,10 +199,10 @@ names(list1)
 #
 list1[1:2]
 
-#
+#Change name to Janelle
 list1$name = "Janelle"
 
-#
+#Update information in row 4 to 44
 list1[[4]] = 44
 ```
 
